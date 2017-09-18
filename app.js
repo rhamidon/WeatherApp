@@ -21,9 +21,9 @@ function getWeatherData(city){
 			var data = JSON.parse(http.responseText);
 			var weatherData = new Weather(data.name, data.weather[0].description.toUpperCase());
 			weatherData.temperature = data.main.temp;
-			console.log(weatherData);
+			displayData(weatherData);
 		} else if(http.readyState === XMLHttpRequest.DONE && http.status !== 200){
-			console.log('error');
+			alert('Error occured!');
 		}
 	};
 	http.send();
@@ -40,6 +40,20 @@ Object.defineProperty(Weather.prototype, 'temperature', {
 		return this._temperature;
 	},
 	set: function (value) {
-		this._temperature = (value * 1.8 + 32).toFixed(2);
+		this._temperature = (9/5 * (value - 273) + 32).toFixed(2);
+
 	}
 });
+
+function displayData(weather) {
+	var weatherBlock = document.getElementById('weather');
+	var cityName = document.getElementById('weatherCity');
+	var description = document.getElementById('weatherDescription');
+	var temperature = document.getElementById('weatherTemperature');
+
+	cityName.textContent = weather.cityName;
+	description.textContent = weather.description;
+	temperature.textContent = weather.temperature + 'F.';
+	weatherBlock.style.display = 'block';
+
+}

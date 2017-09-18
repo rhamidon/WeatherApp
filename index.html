@@ -2,9 +2,26 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="logo.png">
 	<title>Weather App</title>
 </head>
 <body>
-	<h1>Weather</h1>
+	<header>
+		<h1> Simple Weather App! </h1>
+	</header>
+	<div class="main">
+		<div id="search">
+			<label for="city">City Name</label>
+			<input type="text" name="city" id="city">
+			<button type="submit">Show Weather</button>
+		</div>
+		<div id="load">Loading....</div>
+		<div id="weather">
+			<h1 id="weatherCity">City Name</h1>
+			<div id="weatherDescription">WeatherDescription</div>
+			<div id="weatherTemperature">Temperature</div>
+		</div>
+	</div>
+	<script src="app.js"></script>
 </body>
 </html>
