@@ -54,6 +54,26 @@ function displayData(weather) {
 	cityName.textContent = weather.cityName;
 	description.textContent = weather.description;
 	temperature.textContent = weather.temperature + 'F.';
+
+	if(weather.temperature > 95) {
+		weatherBlock.style.backgroundColor = '#FE6700';
+	} else if (weather.temperature > 85) {
+		weatherBlock.style.backgroundColor = '#FED000';
+	} else if (weather.temperature > 76) {
+		weatherBlock.style.backgroundColor = '#9AD000';
+	} else if (weather.temperature > 67) {
+		weatherBlock.style.backgroundColor = '#008001';
+	} else if (weather.temperature > 58) {
+		weatherBlock.style.backgroundColor = '#2DD1CA';
+	} else if (weather.temperature > 49) {
+		weatherBlock.style.backgroundColor = '#99CDFC';
+	} else if (weather.temperature > 40) {
+		weatherBlock.style.backgroundColor = '#2E65FD';
+	} else if (weather.temperature > 31) {
+		weatherBlock.style.backgroundColor = '#0002FB';
+	} else {
+		weatherBlock.style.backgroundColor = '#000083';
+	}  
 	weatherBlock.style.display = 'block';
 
 }
